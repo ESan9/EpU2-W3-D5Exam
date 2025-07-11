@@ -1,0 +1,101 @@
+@import "./scss/functions";
+@import "./scss/variables";
+@import "./scss/variables-dark";
+
+// 1
+$new-font-sizes: (
+  7: $font-size-base * 0.9,
+  8: $font-size-base * 0.8,
+  9: $font-size-base * 0.7,
+  10: $font-size-base * 0.6,
+);
+
+$font-sizes: map-merge($font-sizes, $new-font-sizes);
+
+// 2 3 4 Applicato su HTML
+
+$new-border-widths: (
+  6: $border-width * 6,
+  7: $border-width * 7,
+  8: $border-width * 8,
+  9: $border-width * 9,
+  10: $border-width * 10,
+);
+
+$border-widths: map-merge($border-widths, $new-border-widths);
+
+// 5
+
+$btn-padding-x: 2.5rem;
+$btn-padding-y: 0.75rem;
+
+// 6
+
+$grid-gutter-width: 0.5rem;
+
+// 7
+
+$card-bg: $dark;
+$card-color: $info;
+$card-border-radius: 2rem;
+
+// 8 9 10
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": #00ffea,
+  "warning": $warning,
+  "danger": #ff0077,
+  "light": #f3eeff,
+  "dark": $dark,
+);
+
+// 11
+
+$btn-border-radius: 2rem;
+$badge-border-radius: 2rem;
+$input-border-radius: 2rem;
+$btn-border-radius-lg: 2rem;
+
+// 12 13 14
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": #00ffea,
+  "warning": $warning,
+  "danger": #ff0077,
+  "light": #f3eeff,
+  "dark": $dark,
+  "epicode-1": #5726c3,
+  "epicode-2": #8625a5,
+  "epicode-3": #cb2376,
+);
+
+// 15
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px,
+  xxxxl: 1800px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1520px,
+  xxxxl: 1720px,
+);
+
+@import "./scss/bootstrap.scss";
