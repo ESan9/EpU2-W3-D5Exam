@@ -51,6 +51,7 @@ bookForm.addEventListener("submit", (e) => {
   const description = document.getElementById("description").value;
   const brand = document.getElementById("brand").value;
   const price = document.getElementById("price").value;
+  const img = document.getElementById("imageUrl");
 
   const bookToSave = new Book(name, description, brand, price);
 
