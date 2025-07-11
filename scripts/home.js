@@ -37,6 +37,7 @@ const getBooks = function () {
                   <p class="card-text">Casa Editrice: ${book.brand}</p> 
                  <p class="card-text">Prezzo: ${book.price} $</p>
                   <a href="./details.html?eventId=${book._id}" class="btn btn-dark">Vai ai dettagli</a>
+                  <a href=".//backoffice.html" class="btn btn-dark m-3">Modifica</a>
                 </div>
               </div>
             </div>

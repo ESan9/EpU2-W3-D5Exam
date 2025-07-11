@@ -6,7 +6,7 @@ const eventId = parameters.get("eventId");
 const authToken =
   "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODcwYjhjZDc4Y2RkZjAwMTU1ZDY3OTYiLCJpYXQiOjE3NTIyMTc4MDYsImV4cCI6MTc1MzQyNzQwNn0.VUjghxtyM9dLds1VTtQPuNkeK8y2cRlkYfbvLEgWGug";
 
-// Se in modalità modifica, carica i dati nel form
+// Carica i dati nel form
 
 if (eventId) {
   fetch(endpoint + eventId, {
@@ -81,46 +81,76 @@ bookForm.addEventListener("submit", (e) => {
     });
 });
 
-// const deleteBook = document.getElementById("delete");
+// Avevo messo gli ID uguali nei due FORM, 1 ora perché non si aggiornava in home quando cliccavo modifica, 1 ora, ora funziona tutto
 
-// deleteBook.addEventListener("click", () => {
-//   fetch(endpoint + eventId, {
-//     method: "DELETE",
-//     headers: {
-//       Authorization: authToken,
-//     },
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         alert("ELIMINAZIONE AVVENUTA CON SUCCESSO");
-//         location.assign("/home.html");
-//       } else {
-//         throw new Error("Errore in fase di eliminazione");
-//       }
-//     })
-//     .catch((err) => {
-//       console.log("ERRORE", err);
-//     });
-// });
+document.getElementById("modify-btn").addEventListener("click", () => {
+  const id = document.getElementById("product-id").value.trim();
 
-// const modifyBook = document.getElementById("modify");
+  const name = document.getElementById("manage-name").value;
+  const description = document.getElementById("manage-description").value;
+  const brand = document.getElementById("manage-brand").value;
+  const price = document.getElementById("manage-price").value;
 
-// modifyBook.addEventListener("click", () => {
-//   fetch(endpoint + eventId, {
-//     method: "PUT",
-//     headers: {
-//       Authorization: authToken,
-//     },
-//   })
-//     .then((response) => {
-//       if (response.ok) {
-//         alert("MODIFICA AVVENUTA CON SUCCESSO");
-//         location.assign("/home.html");
-//       } else {
-//         throw new Error("Errore in fase di modifica");
-//       }
-//     })
-//     .catch((err) => {
-//       console.log("ERRORE", err);
-//     });
-// });
+  if (!id) return alert("Inserisci un ID valido per la modifica");
+
+  const updatedProduct = {
+    name,
+    description,
+    brand,
+    price,
+    imageUrl:
+      "https://m.media-amazon.com/images/I/715WdnBHqYL._UF1000,1000_QL80_.jpg",
+  };
+
+  fetch(endpoint + id, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: authToken,
+    },
+    body: JSON.stringify(updatedProduct),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Errore nella modifica");
+      return res.json();
+    })
+    .then(() => {
+      alert("Prodotto modificato con successo!");
+      window.location.href = "./home.html";
+    })
+    .catch((err) => {
+      console.error("ERRORE PUT:", err);
+      alert("Errore durante la modifica");
+    });
+});
+
+// PER CANCELLARE
+
+document.getElementById("delete-btn").addEventListener("click", () => {
+  const id = document.getElementById("product-id").value.trim();
+  if (!id) return alert("Inserisci un ID valido per la cancellazione");
+
+  if (!confirm("Sei sicuro di voler cancellare questo prodotto?")) return;
+
+  fetch(endpoint + id, {
+    method: "DELETE",
+    headers: {
+      Authorization: authToken,
+    },
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Errore nella cancellazione");
+      alert("Prodotto eliminato con successo!");
+    })
+    .catch((err) => {
+      console.error("ERRORE DELETE:", err);
+      alert("Errore durante la cancellazione");
+    });
+});
+
+// ALERT DEL FORM
+
+document.getElementById("res").addEventListener("click", () => {
+  if (!confirm("Sei sicuro di voler resettare il form?")) return;
+  bookForm.reset();
+});

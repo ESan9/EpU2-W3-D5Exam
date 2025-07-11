@@ -95,8 +95,79 @@
                 >
                   SALVA
                 </button>
-                <button type="reset" class="btn btn-primary btn-dark" id="res">
+                <button
+                  type="reset"
+                  class="btn btn-primary btn-danger"
+                  id="res"
+                >
                   RESET
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6">
+            <h2 class="mb-4 text-center">Gestione Prodotto</h2>
+            <form id="backoffice-form">
+              <div class="mb-3">
+                <label for="product-id" class="form-label">ID Prodotto</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="product-id"
+                  placeholder="Inserisci l'ID del prodotto"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="manage-name" class="form-label">Nome</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="manage-name"
+                  placeholder="Titolo del libro"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="manage-description" class="form-label"
+                  >Descrizione</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="manage-description"
+                  placeholder="Breve descrizione"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="manage-brand" class="form-label"
+                  >Casa Editrice</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="manage-brand"
+                  placeholder="Es. Mondadori"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="manage-price" class="form-label">Prezzo</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="manage-price"
+                  placeholder="Es. 19.99"
+                />
+              </div>
+
+              <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-dark" id="modify-btn">
+                  Modifica
+                </button>
+                <button type="button" class="btn btn-danger" id="delete-btn">
+                  Cancella
                 </button>
               </div>
             </form>
