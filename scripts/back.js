@@ -79,3 +79,22 @@ bookForm.addEventListener("submit", (e) => {
       alert("Errore durante il salvataggio");
     });
 });
+
+const deleteBook = document.getElementById("delete");
+
+deleteBook.addEventListener("click", () => {
+  fetch(endpoint + "/" + eventId, {
+    method: "DELETE",
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("ELIMINAZIONE AVVENUTA CON SUCCESSO");
+        location.assign("/index.html");
+      } else {
+        throw new Error("Errore in fase di eliminazione");
+      }
+    })
+    .catch((err) => {
+      console.log("ERRORE", err);
+    });
+});

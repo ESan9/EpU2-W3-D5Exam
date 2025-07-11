@@ -32,11 +32,11 @@ const getBooks = function () {
               <div class="card h-100 d-flex flex-column">
                 <img src="https://m.media-amazon.com/images/I/715WdnBHqYL._UF1000,1000_QL80_.jpg">
                 <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">${book.name}</h5>
-                  <p class="card-text flex-grow-1">${book.description}</p>
-                  <p class="card-text">${book.brand}</p> 
-                 <p class="card-text">${book.price}</p>
-                  <a href="./details.html?eventId=${book._id}" class="btn btn-primary">Vai ai dettagli</a>
+                  <h5 class="card-title">Titolo: ${book.name}</h5>
+                  <p class="card-text flex-grow-1">Descrizione: ${book.description}</p>
+                  <p class="card-text">Casa Editrice: ${book.brand}</p> 
+                 <p class="card-text">Prezzo: ${book.price} $</p>
+                  <a href="./details.html?eventId=${book._id}" class="btn btn-dark">Vai ai dettagli</a>
                 </div>
               </div>
             </div>
