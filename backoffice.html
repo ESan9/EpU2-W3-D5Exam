@@ -3,7 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./custom-boot.css" />
     <title>Backoffice</title>
   </head>
-  <body></body>
+  <body class="vh-100 d-flex flex-column">
+    <header>
+      <nav class="navbar navbar-expand-md bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">LOTR library</a>
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link link-light"
+                  aria-current="page"
+                  href="./home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./backoffice.html"
+                  >Backoffice</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Mi sento ispirato..."
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-light" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <section class="text-center">
+        <h1 class="p-4">LOTR library</h1>
+        <h2>Inserisci un libro nel catalogo</h2>
+      </section>
+    </header>
+    <main class="flex-grow-1">
+      <div class="container">
+        <div class="row justify-content-center my-4">
+          <div class="col col-12 col-md-6">
+            <form id="concert-form">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Descrizione</label>
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label"
+                  >Casa Editrice</label
+                >
+                <textarea
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  required
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Prezzo</label>
+                <input type="number" class="form-control" id="price" required />
+              </div>
+              <div class="text-center p-4">
+                <button type="submit" class="btn btn-primary btn-dark">
+                  SALVA
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p class="text-center">LOTR library<span id="year"></span></p>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/back.js"></script>
+  </body>
 </html>

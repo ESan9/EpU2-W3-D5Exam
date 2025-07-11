@@ -4,7 +4,10 @@ body {
   font-weight: 400;
   font-style: normal;
 }
-body h1, body .h1 {
+body a.navbar-brand,
+body h1,
+body .h1,
+body footer > p {
   font-family: "MedievalSharp", cursive;
   font-weight: 400;
   font-style: normal;
