@@ -81,21 +81,46 @@ bookForm.addEventListener("submit", (e) => {
     });
 });
 
-const deleteBook = document.getElementById("delete");
+// const deleteBook = document.getElementById("delete");
 
-deleteBook.addEventListener("click", () => {
-  fetch(endpoint + "/" + eventId, {
-    method: "DELETE",
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("ELIMINAZIONE AVVENUTA CON SUCCESSO");
-        location.assign("/index.html");
-      } else {
-        throw new Error("Errore in fase di eliminazione");
-      }
-    })
-    .catch((err) => {
-      console.log("ERRORE", err);
-    });
-});
+// deleteBook.addEventListener("click", () => {
+//   fetch(endpoint + eventId, {
+//     method: "DELETE",
+//     headers: {
+//       Authorization: authToken,
+//     },
+//   })
+//     .then((response) => {
+//       if (response.ok) {
+//         alert("ELIMINAZIONE AVVENUTA CON SUCCESSO");
+//         location.assign("/home.html");
+//       } else {
+//         throw new Error("Errore in fase di eliminazione");
+//       }
+//     })
+//     .catch((err) => {
+//       console.log("ERRORE", err);
+//     });
+// });
+
+// const modifyBook = document.getElementById("modify");
+
+// modifyBook.addEventListener("click", () => {
+//   fetch(endpoint + eventId, {
+//     method: "PUT",
+//     headers: {
+//       Authorization: authToken,
+//     },
+//   })
+//     .then((response) => {
+//       if (response.ok) {
+//         alert("MODIFICA AVVENUTA CON SUCCESSO");
+//         location.assign("/home.html");
+//       } else {
+//         throw new Error("Errore in fase di modifica");
+//       }
+//     })
+//     .catch((err) => {
+//       console.log("ERRORE", err);
+//     });
+// });
