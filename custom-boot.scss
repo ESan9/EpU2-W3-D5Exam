@@ -2,4 +2,15 @@
 @import "./scss/variables";
 @import "./scss/variables-dark";
 
+body {
+  font-family: "MedievalSharp", cursive;
+  font-weight: 400;
+  font-style: normal;
+  h1 {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+
 @import "./scss/bootstrap.scss";
