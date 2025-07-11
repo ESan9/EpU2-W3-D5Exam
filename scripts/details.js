@@ -28,7 +28,8 @@ fetch(endpoint + eventId, {
       "Casa Editrice:" + " " + bookDetails.brand;
     document.querySelector(".card .card-text:nth-of-type(3)").innerText =
       "Prezzo:" + " " + bookDetails.price + "€";
-    document.querySelector(".card-img-top").src = bookDetails.imageUrl;
+    document.querySelector(".card-img-top").src =
+      "https://m.media-amazon.com/images/I/715WdnBHqYL._UF1000,1000_QL80_.jpg";
   })
   .catch((err) => {
     console.log("ERRORE", err);
